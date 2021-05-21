@@ -84,10 +84,14 @@ function draw() {
 function keyPressed(){
 	
 	if (keyCode == LEFT_ARROW){
-	helicopterSprite.x=helicopterSprite.x-2
+	helicopterSprite.x=helicopterSprite.x-2;
+	translation={x:-2, y:0};
+	Matter.Body.translate(packageBody,translation);
 	}
 	if (keyCode == RIGHT_ARROW){
-	helicopterSprite.x=helicopterSprite.x+2
+	helicopterSprite.x=helicopterSprite.x+2;
+	translation={x:2, y:0};
+	Matter.Body.translate(packageBody,translation);
 	}
 	if (keyCode === DOWN_ARROW) {
 		Matter.Body.setStatic(packageBody, false);      
